@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import org.junit.Assert;
+
 import cucumber.TestContext;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -50,19 +52,13 @@ public class LoginSteps {
 	@Then("^emp welcome page is displayed$")
 	public void emp_welcome_page_is_displayed() {
 		boolean isdisplayed = welcome.verify_welcome();
-		if(isdisplayed)
-			System.out.println("Test Passed");
-		else
-			System.out.println("Test Failed");
+		Assert.assertTrue("User not able to login - Test Failed", isdisplayed);
 	}
 	
 	@Then("^he remains in login screen$")
 	public void he_remains_in_login_screen() {
 		boolean isdisplayed = login.verify_login();
-		if(isdisplayed)
-			System.out.println("Test Passed");
-		else
-			System.out.println("Test Failed");
+		Assert.assertTrue("Invalid login successfull - Test Failed", isdisplayed);
 	}
 	
 	@When("he enters username and password")

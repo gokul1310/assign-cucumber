@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,11 +27,16 @@ public class WelcomePage {
 	}
 	
 	public boolean verify_welcome() {
-		boolean isdisplayed = txt_welocme.isDisplayed();
-		if(isdisplayed)
-			return true;
-		else
+		try {
+			boolean isdisplayed = txt_welocme.isDisplayed();
+			if(isdisplayed)
+				return true;
+			else
+				return false;
+		}catch(NoSuchElementException exception){
 			return false;
+		}
+		
 	}
 
 

@@ -1,4 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: runners.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.588 sec
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 17.816 sec <<< FAILURE!
+Then emp welcome page is displayed(Scenario: Valid login)  Time elapsed: 0.005 sec  <<< FAILURE!
+java.lang.AssertionError: User not able to login - Test Failed
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at stepDefinitions.LoginSteps.emp_welcome_page_is_displayed(LoginSteps.java:55)
+	at ?.Then emp welcome page is displayed(Login.feature:16)
+
+Scenario: Valid login  Time elapsed: 0.006 sec  <<< FAILURE!
+java.lang.AssertionError: User not able to login - Test Failed
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at stepDefinitions.LoginSteps.emp_welcome_page_is_displayed(LoginSteps.java:55)
+	at ?.Then emp welcome page is displayed(Login.feature:16)
+

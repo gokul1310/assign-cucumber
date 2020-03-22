@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="24" failures="0" name="runners.TestRunner" time="8.572" errors="0" skipped="0">
+<testsuite tests="5" failures="2" name="runners.TestRunner" time="0.014" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.6+10-LTS"/>
@@ -65,28 +65,23 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Scenario: Valid login" name="Given user is in login page" time="0.011"/>
-  <testcase classname="Scenario: Valid login" name="When he enters username as &quot;admin&quot; and password as &quot;admin&quot;" time="0"/>
-  <testcase classname="Scenario: Valid login" name="And clicks on login button" time="0.001"/>
-  <testcase classname="Scenario: Valid login" name="Then emp welcome page is displayed" time="0"/>
-  <testcase classname="Scenario: Valid login" name="Scenario: Valid login" time="2.643"/>
-  <testcase classname="Scenario: Valid login" name="Given user is in login page" time="0"/>
+  <testcase classname="Scenario: Valid login" name="Given user is in login page" time="0.003"/>
   <testcase classname="Scenario: Valid login" name="When he enters username and password" time="0"/>
   <testcase classname="Scenario: Valid login" name="And clicks on login button" time="0"/>
-  <testcase classname="Scenario: Valid login" name="Then emp welcome page is displayed" time="0"/>
-  <testcase classname="Scenario: Valid login" name="Scenario: Valid login" time="0.754"/>
-  <testcase classname="Scenario: Invalid login username" name="Given user is in login page" time="0"/>
-  <testcase classname="Scenario: Invalid login username" name="When he enters invalid username as &quot;noadmin&quot; and password as &quot;admin&quot;" time="0"/>
-  <testcase classname="Scenario: Invalid login username" name="And clicks on login button" time="0"/>
-  <testcase classname="Scenario: Invalid login username" name="Then he remains in login screen" time="0"/>
-  <testcase classname="Scenario: Invalid login username" name="Scenario: Invalid login username" time="1.768"/>
-  <testcase classname="Scenario: Invalid login password" name="Given user is in login page" time="0"/>
-  <testcase classname="Scenario: Invalid login password" name="When he enters invalid username as &quot;admin&quot; and password as &quot;noadmin&quot;" time="0.001"/>
-  <testcase classname="Scenario: Invalid login password" name="And clicks on login button" time="0"/>
-  <testcase classname="Scenario: Invalid login password" name="Then he remains in login screen" time="0"/>
-  <testcase classname="Scenario: Invalid login password" name="Scenario: Invalid login password" time="0.732"/>
-  <testcase classname="Scenario: Logout functionality" name="Given user is in welcome page" time="0"/>
-  <testcase classname="Scenario: Logout functionality" name="When he clicks on logout button" time="0"/>
-  <testcase classname="Scenario: Logout functionality" name="Then login page is displayed" time="0"/>
-  <testcase classname="Scenario: Logout functionality" name="Scenario: Logout functionality" time="2.662"/>
+  <testcase classname="Scenario: Valid login" name="Then emp welcome page is displayed" time="0.005">
+    <failure message="User not able to login - Test Failed" type="java.lang.AssertionError">java.lang.AssertionError: User not able to login - Test Failed
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at stepDefinitions.LoginSteps.emp_welcome_page_is_displayed(LoginSteps.java:55)
+	at ✽.Then emp welcome page is displayed(Login.feature:16)
+</failure>
+  </testcase>
+  <testcase classname="Scenario: Valid login" name="Scenario: Valid login" time="0.006">
+    <failure message="User not able to login - Test Failed" type="java.lang.AssertionError">java.lang.AssertionError: User not able to login - Test Failed
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at stepDefinitions.LoginSteps.emp_welcome_page_is_displayed(LoginSteps.java:55)
+	at ✽.Then emp welcome page is displayed(Login.feature:16)
+</failure>
+  </testcase>
 </testsuite>
