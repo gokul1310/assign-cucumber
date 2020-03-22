@@ -38,7 +38,8 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-							<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+				<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -52,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Mar 15, 2020 08:40:03 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Mar 23, 2020 12:23:29 AM</span>
 				</a>
 			</li>
 			<li>
@@ -85,6 +86,16 @@
 			<!-- test toggle -->
 
 			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@Functional</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
 			<!-- category toggle -->
 
 			<!-- clear filters -->
@@ -143,7 +154,7 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -158,7 +169,7 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>15</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>19</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -178,12 +189,12 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Login Tests</span>
-						<span class='test-time'>Mar 15, 2020 08:40:03 PM</span>
+						<span class='test-time'>Mar 23, 2020 12:23:29 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 10s+936ms</span>
+	<span class='duration right label'>0h 0m 7s+276ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Valid login</span>
@@ -224,10 +235,13 @@
 	</ul>
 </div>
 <div class='scenario node' test-id='7' status='pass'>
-	<span class='duration right label'>0h 0m 5s+812ms</span>
+	<div class='category-list'>
+		<span class='category label white-text'>@Functional</span>
+	</div>
+	<span class='duration right label'>0h 0m 5s+484ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Invalid login username</span>
+		<span class="desc-text">Valid login</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='8' class='node given pass' status='pass'>
@@ -242,7 +256,7 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When he enters invalid username as "noadmin" and password as "admin"</span>
+			<span class="bdd-step-name">When he enters username and password</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -258,17 +272,17 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then he remains in login screen</span>
+			<span class="bdd-step-name">Then emp welcome page is displayed</span>
 				<div class='pre'>passed</div>
 			
 		</li>
 	</ul>
 </div>
 <div class='scenario node' test-id='12' status='pass'>
-	<span class='duration right label'>0h 0m 5s+846ms</span>
+	<span class='duration right label'>0h 0m 5s+725ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Invalid login password</span>
+		<span class="desc-text">Invalid login username</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='13' class='node given pass' status='pass'>
@@ -283,7 +297,7 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When he enters invalid username as "admin" and password as "noadmin"</span>
+			<span class="bdd-step-name">When he enters invalid username as "noadmin" and password as "admin"</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -305,25 +319,66 @@
 		</li>
 	</ul>
 </div>
+<div class='scenario node' test-id='17' status='pass'>
+	<span class='duration right label'>0h 0m 6s+438ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Invalid login password</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='18' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user is in login page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='19' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When he enters invalid username as "admin" and password as "noadmin"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='20' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And clicks on login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='21' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then he remains in login screen</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
 					</div>
 				</li>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='17'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='22'>
 					<div class='test-heading'>
 						<span class='test-name'>Logout Tests</span>
-						<span class='test-time'>Mar 15, 2020 08:40:26 PM</span>
+						<span class='test-time'>Mar 23, 2020 12:24:00 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenario node' test-id='18' status='pass'>
-	<span class='duration right label'>0h 0m 5s+923ms</span>
+<div class='scenario node' test-id='23' status='pass'>
+	<span class='duration right label'>0h 0m 5s+594ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Logout functionality</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='19' class='node given pass' status='pass'>
+		<li test-id='24' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
@@ -331,7 +386,7 @@
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='20' class='node when pass' status='pass'>
+		<li test-id='25' class='node when pass' status='pass'>
 			
 			<b>When</b>
 			
@@ -339,7 +394,7 @@
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='21' class='node then pass' status='pass'>
+		<li test-id='26' class='node then pass' status='pass'>
 			
 			<b>Then</b>
 			
@@ -376,6 +431,76 @@
 
 </div>
 <!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Functional</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 23, 2020 12:23:39 AM</td>
+										<td class='linked' test-id='7'>Login Tests.Valid login</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
 <!-- category view -->
 <div id='author-view' class='view hide'>
     <section id='controls'>
@@ -405,12 +530,12 @@
                             <div class='author-heading'>
                                 <span class='author-name'>CucumberTest-GokulRaj</span>
                                 <span class='author-status right'>
-                                        <span class='label pass'>4</span>
+                                        <span class='label pass'>5</span>
 						        </span>
                             </div>
                             <div class='author-content hide'>
                                 <div class='author-status-counts'>
-                                    <span class='label green accent-4 white-text'>Passed: 4</span>
+                                    <span class='label green accent-4 white-text'>Passed: 5</span>
                                     
                                     
                                 </div>
@@ -426,23 +551,28 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Mar 15, 2020 08:40:04 PM</td>
+                                                <td>Mar 23, 2020 12:23:29 AM</td>
                                                 <td class='linked' test-id='2'>Login Tests.Valid login</td>
                                                 <td><span class='test-status pass'>pass</span></td>
                                             </tr>
                                             <tr>
-                                                <td>Mar 15, 2020 08:40:14 PM</td>
-                                                <td class='linked' test-id='7'>Login Tests.Invalid login username</td>
+                                                <td>Mar 23, 2020 12:23:39 AM</td>
+                                                <td class='linked' test-id='7'>Login Tests.Valid login</td>
                                                 <td><span class='test-status pass'>pass</span></td>
                                             </tr>
                                             <tr>
-                                                <td>Mar 15, 2020 08:40:20 PM</td>
-                                                <td class='linked' test-id='12'>Login Tests.Invalid login password</td>
+                                                <td>Mar 23, 2020 12:23:45 AM</td>
+                                                <td class='linked' test-id='12'>Login Tests.Invalid login username</td>
                                                 <td><span class='test-status pass'>pass</span></td>
                                             </tr>
                                             <tr>
-                                                <td>Mar 15, 2020 08:40:26 PM</td>
-                                                <td class='linked' test-id='18'>Logout Tests.Logout functionality</td>
+                                                <td>Mar 23, 2020 12:23:53 AM</td>
+                                                <td class='linked' test-id='17'>Login Tests.Invalid login password</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mar 23, 2020 12:24:00 AM</td>
+                                                <td class='linked' test-id='23'>Logout Tests.Logout functionality</td>
                                                 <td><span class='test-status pass'>pass</span></td>
                                             </tr>
                                         </tbody>
@@ -476,31 +606,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>15</div>
+					<div class='panel-lead'>19</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Mar 15, 2020 08:40:03 PM</div>
+					<div class='panel-lead'>Mar 23, 2020 12:23:29 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Mar 15, 2020 08:40:32 PM</div>
+			 		<div class='panel-lead'>Mar 23, 2020 12:24:08 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>29,088ms</div>
+					<div class='panel-lead'>39,416ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -523,6 +653,30 @@
 					</table>
 				</div>
 			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@Functional</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -541,7 +695,7 @@
 				skipParent: 0,
 				exceptionsParent: 0,
 				
-				passChild: 4,
+				passChild: 5,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
@@ -550,7 +704,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 15,
+				passGrandChild: 19,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,

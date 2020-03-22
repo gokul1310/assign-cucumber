@@ -13,6 +13,7 @@ import dataProvider.ConfigFileReader;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/resources/stories",
+		//tags="@Functional",
 		glue= {"stepDefinitions"},
 		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 		monochrome = true

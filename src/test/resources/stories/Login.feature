@@ -1,9 +1,17 @@
 Feature: Login Tests
 Narrative: The purpose of this test is to verify login functionality
 
+
 Scenario: Valid login
 Given user is in login page
 When he enters username as "admin" and password as "admin"
+And clicks on login button
+Then emp welcome page is displayed
+
+@Functional
+Scenario: Valid login
+Given user is in login page
+When he enters username and password
 And clicks on login button
 Then emp welcome page is displayed
 

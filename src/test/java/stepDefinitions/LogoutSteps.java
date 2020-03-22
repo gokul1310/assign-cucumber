@@ -1,32 +1,27 @@
 package stepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-
+import cucumber.TestContext;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import dataProvider.ConfigFileReader;
-import managers.PageObjectManager;
-import managers.WebDriverManager;
 import pageObjects.LoginPage;
 import pageObjects.WelcomePage;
 
 public class LogoutSteps {
-	WebDriver driver;
+	
+	TestContext testContext;
 	LoginPage login;
 	WelcomePage welcome;
-	PageObjectManager pageObjectManager;
-	ConfigFileReader configFileReader;
-	WebDriverManager webDriverManager;
+	
+	public LogoutSteps(TestContext context) {
+		 testContext = context;
+		 login = testContext.getPageObjectManager().getLoginPage();
+		 welcome = testContext.getPageObjectManager().getWelcomePage();
+	}
 	
 	@Given("^user is in welcome page$")
 	public void user_is_in_welcome_page() {
-		configFileReader= new ConfigFileReader();
-		webDriverManager = new WebDriverManager();
-		driver = webDriverManager.getDriver();
-		driver.get(configFileReader.getApplicationUrl());
-		pageObjectManager = new PageObjectManager(driver);
-		login = pageObjectManager.getLoginPage();
+		login.navigateTo_LoginPage();
 		login.clickOn_Login();
 		login.clear_User();
 		login.enter_User("admin");
@@ -36,7 +31,6 @@ public class LogoutSteps {
 	
 	@When("^he clicks on logout button$")
 	public void he_clicks_on_logout_button() {
-		welcome = pageObjectManager.getWelcomePage();
 		welcome.clickOn_Logout();
 	}
 
@@ -47,7 +41,6 @@ public class LogoutSteps {
 			System.out.println("Test Passed");
 		else
 			System.out.println("Test Failed");
-		driver.quit();
 	}
 
 }

@@ -1,32 +1,30 @@
 package stepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-
+import cucumber.TestContext;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import dataProvider.ConfigFileReader;
-import managers.PageObjectManager;
-import managers.WebDriverManager;
 import pageObjects.LoginPage;
 import pageObjects.WelcomePage;
+import utils.Utilities;
 
 public class LoginSteps {
-	WebDriver driver;
+	
+	TestContext testContext;
 	LoginPage login;
 	WelcomePage welcome;
-	PageObjectManager pageObjectManager;
-	ConfigFileReader configFileReader;
-	WebDriverManager webDriverManager;
+	Utilities utilities;
+	
+	public LoginSteps(TestContext context) {
+		 testContext = context;
+		 login = testContext.getPageObjectManager().getLoginPage();
+		 welcome = testContext.getPageObjectManager().getWelcomePage();
+		 utilities = testContext.getPageObjectManager().getUtilities();
+	}
 	
 	@Given("^user is in login page$")
 	public void user_is_in_login_page() {
-		configFileReader= new ConfigFileReader();
-		webDriverManager= new WebDriverManager();
-		driver = webDriverManager.getDriver();
-		driver.get(configFileReader.getApplicationUrl());
-		pageObjectManager = new PageObjectManager(driver);
-		login = pageObjectManager.getLoginPage();
+		login.navigateTo_LoginPage();
 		login.clickOn_Login();
 	}
 
@@ -51,13 +49,11 @@ public class LoginSteps {
 
 	@Then("^emp welcome page is displayed$")
 	public void emp_welcome_page_is_displayed() {
-		welcome = pageObjectManager.getWelcomePage();
 		boolean isdisplayed = welcome.verify_welcome();
 		if(isdisplayed)
 			System.out.println("Test Passed");
 		else
 			System.out.println("Test Failed");
-		driver.quit();
 	}
 	
 	@Then("^he remains in login screen$")
@@ -67,7 +63,13 @@ public class LoginSteps {
 			System.out.println("Test Passed");
 		else
 			System.out.println("Test Failed");
-		driver.quit();
+	}
+	
+	@When("he enters username and password")
+	public void he_enters_user_and_pass() {
+		login.clear_User();
+		login.enter_User(utilities.appPropertyReader("application.username"));
+		login.enter_Pass(utilities.appPropertyReader("application.password"));
 	}
 
 }
